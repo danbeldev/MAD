@@ -21,4 +21,7 @@ interface Api {
     suspend fun getSymptomsHistory(
         @Query("user_id") userId:String
     ):SymptomsHistory
+
+    @GET("/api/covid_stats")
+    suspend fun getCovidStatus():CovidStatus
 }

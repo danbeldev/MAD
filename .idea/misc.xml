@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/drawable/widget_schape.xml" value="0.1615" />
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/drawable/widget_secondary_background.xml" value="0.1615" />
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/drawable/widget_secondary_background_green.xml" value="0.1615" />
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/layout/water_widget_loading.xml" value="0.190625" />
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/layout/water_widget_preview.xml" value="0.190625" />
+        <entry key="..\:/Users/danbe/AndroidStudioProjects/MAD/app/src/main/res/xml/water_widget_info.xml" value="0.12545289855072464" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

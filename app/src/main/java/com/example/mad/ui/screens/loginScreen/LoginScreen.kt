@@ -1,6 +1,7 @@
 package com.example.mad.ui.screens.loginScreen
 
 import android.annotation.SuppressLint
+import android.app.Application
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -11,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -27,6 +29,7 @@ import com.example.mad.ui.view.TextFieldEmail
 import com.example.mad.ui.view.TextFieldPassword
 import kotlinx.coroutines.flow.onEach
 import com.example.mad.R
+import com.example.mad.common.ConnectionInternet
 import com.example.mad.navigation.Screen
 import com.example.mad.ui.screens.loginScreen.view.ErrorCard
 import com.example.mad.ui.view.BaseButton
@@ -35,17 +38,30 @@ import com.example.mad.ui.view.BaseButton
 @Composable
 fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel(),
-    navController: NavController
+    navController: NavController,
+    application:Application
 ) {
 
-    val login = remember { mutableStateOf("nodata@wsa.com") }
+    val lifecycleOwner = LocalLifecycleOwner.current
+
+    val login = remember { mutableStateOf("healthy@wsa.com") }
     val password = remember { mutableStateOf("1234") }
 
     var authorizationResult:Result<AuthorizationResult>? by remember { mutableStateOf(null) }
 
+    val connection = ConnectionInternet(application = application)
+
     viewModel.responseAuthorization.onEach {
         authorizationResult = it
     }.launchWhenStarted()
+
+    connection.observe(lifecycleOwner){
+        authorizationResult = if (it){
+            null
+        }else {
+            Result.Error(message = "No connect internet")
+        }
+    }
 
     Surface(
         modifier = Modifier.fillMaxSize(),

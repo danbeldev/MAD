@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mad"
-        minSdk 23
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -84,6 +84,7 @@ dependencies {
 
     //Coil
     implementation("io.coil-kt:coil-compose:2.1.0")
+    implementation("io.coil-kt:coil:2.1.0")
 
     //Kotlin serialization and retrofit
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
@@ -108,4 +109,8 @@ dependencies {
 
     //System Controller
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.24.5-alpha"
+
+    // Glance
+    implementation("androidx.glance:glance:1.0.0-alpha03")
+    implementation("androidx.glance:glance-appwidget:1.0.0-alpha03")
 }

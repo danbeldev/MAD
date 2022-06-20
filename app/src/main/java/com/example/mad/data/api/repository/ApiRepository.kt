@@ -31,6 +31,10 @@ class ApiRepository @Inject constructor(
         }catch (e:Exception){}
     }
 
-    suspend fun getSymptomsHistory(userId:String): SymptomsHistory? =
+    suspend fun getSymptomsHistory(userId:String): SymptomsHistory =
         userApi.getSymptomsHistory(userId)
+
+    suspend fun getCovidStatus():Flow<CovidStatus> = flow {
+        emit( userApi.getCovidStatus() )
+    }
 }

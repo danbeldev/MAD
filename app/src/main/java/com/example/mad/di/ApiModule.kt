@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
-private const val BASE_URL = "https://wsa2021.mad.hakta.pro"
+const val BASE_URL = "https://wsa2021.mad.hakta.pro"
 
 @Module
 @InstallIn(SingletonComponent::class)

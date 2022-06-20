@@ -1,5 +1,6 @@
 package com.example.mad.navigation.host
 
+import android.app.Application
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -13,7 +14,9 @@ import com.example.mad.ui.screens.loginScreen.LoginScreen
 import com.example.mad.ui.screens.mainScreen.MainScreen
 
 @Composable
-fun MainNavHost() {
+fun MainNavHost(
+    application:Application
+) {
 
    val navHostController = rememberNavController()
 
@@ -23,7 +26,8 @@ fun MainNavHost() {
        builder = {
            composable(Screen.Login.route){
                LoginScreen(
-                   navController = navHostController
+                   navController = navHostController,
+                   application = application
                )
            }
            composable(
@@ -35,7 +39,8 @@ fun MainNavHost() {
                )
            ){
                MainScreen(
-                   userData = it.arguments!!.getString(USER_DATA)!!.decodeFromString()
+                   userData = it.arguments!!.getString(USER_DATA)!!.decodeFromString(),
+                   application = application
                )
            }
        }

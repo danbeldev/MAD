@@ -7,7 +7,7 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
-val primaryBackground = Color(0xFF0A3270)
+val primaryBackground = Color(0xFF1965DA)
 val tintColor  = Color(0xFFFFFFFF)
 
 val errorCard = Color(0xFFD60067)
